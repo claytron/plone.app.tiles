@@ -7,7 +7,7 @@
 // Depends:
 //    ++resource++plone.app.jquery.js
 //    ++resource++plone.app.toolbar/src/plone.overlay.js
-// Description: 
+// Description:
 // License:
 //
 // Copyright (C) 2012 Plone Foundation
@@ -93,8 +93,8 @@ $.plone.tile.Tile.prototype = {
 
     // create tile wrapper if not passing in options
     if (self.wrapper === undefined) {
-      self.wrapper = $('<div/>').addClass('plone-tile');
-      self.el.wrap(self.wrapper);
+      self.el.wrap('<div class="plone-tile"/>');
+      self.wrapper = self.el.parent();
     }
 
     // make sure wrapper has relative position
