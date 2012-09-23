@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 <registry>
+    <records interface="plone.app.tiles.interfaces.IDecoSettings" />
 
     <!-- Tiles list -->
+
     <record name="plone.app.tiles">
         <field type="plone.registry.field.List">
             <title>Tiles</title>

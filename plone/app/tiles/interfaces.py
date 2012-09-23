@@ -1,3 +1,6 @@
+from zope import schema
+from zope.interface import Interface
+
 from zope.schema import TextLine
 from zope.publisher.interfaces.browser import IBrowserView
 from zope.i18nmessageid import MessageFactory
@@ -33,4 +36,20 @@ class ITileBaseSchema(model.Schema):
     klass = TextLine(
         title=_(u"Additional classes."),
         required=False,
-        )
+    )
+
+
+class IDecoSettings(Interface):
+    """Global deco settings.
+    """
+
+    available_tiles = schema.Tuple(
+        title=_(u"Available Tiles"),
+        description=_(
+            u"help_available_tiles",
+            default=u""),
+        required=False,
+        default=(),
+        value_type=schema.Choice(
+            source="plone.app.tiles.vocabularies.AvailableTiles")
+    )

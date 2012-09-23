@@ -27,8 +27,8 @@
         name="plone.app.tiles"
         directory="resources" />
 
-  <!-- Image scale support for tile images -->
-  <browser:page
+    <!-- Image scale support for tile images -->
+    <browser:page
       name="images"
       for="plone.tiles.interfaces.IPersistentTile"
       class=".imagescaling.ImageScaling"
@@ -44,9 +44,24 @@
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />
 
-   <subscriber handler=".handlers.notifyModified" />
+    <subscriber handler=".handlers.notifyModified" />
+
+    <include package="plone.app.registry" />
+
+    <!-- Control panel -->
+    <browser:page
+        name="deco-controlpanel"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".browser.controlpanel.DecoControlPanel"
+        permission="cmf.ManagePortal"
+        />
+
+    <!-- Available Tiles Vocabulary -->
+    <utility component=".vocabularies.available_tiles_vocabulary"
+             name="plone.app.tiles.vocabularies.AvailableTiles"
+             provides="zope.schema.interfaces.IVocabularyFactory" />
 
     <!-- TODO: Remove once we stop doing TTW testing -->
-    <include file="demo.zcml" />
+    <!-- <include file="demo.zcml" /> -->
 
 </configure>

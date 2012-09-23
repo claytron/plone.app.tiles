@@ -42,7 +42,7 @@ setup(
         'zope.annotation',
         'zope.i18nmessageid',
         'plone.memoize',
-        'plone.registry',
+        'plone.app.registry',
         'plone.tiles',
         'zope.publisher',
         'zope.security',

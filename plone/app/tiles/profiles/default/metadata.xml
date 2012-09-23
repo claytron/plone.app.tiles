@@ -3,5 +3,6 @@
     <dependencies>
         <dependency>profile-plone.app.tiles:default</dependency>
         <dependency>profile-plone.app.drafts:default</dependency>
+        <dependency>profile-plone.app.registry:default</dependency>
     </dependencies>
 </metadata>
